@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: bl-dev
+
+  cloud:
+    config:
+      uri: http://localhost:9988
