@@ -1,0 +1,5 @@
+server:
+  port: 9978
+
+moje:
+  trudne: false

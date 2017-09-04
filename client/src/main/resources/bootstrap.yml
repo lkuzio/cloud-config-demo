@@ -1,8 +1,8 @@
 spring:
   profiles:
-    active: dev
+    active: prod
   application:
-    name: bl-dev
+    name: bl
 
   cloud:
     config:
