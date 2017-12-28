@@ -4,7 +4,6 @@ package xyz.javista.cloudconfigclient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,8 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CloudConfigDemoClientApplication {
 
-    @Value("${moje.trudne}")
-    private String propert;
+    @Value("${somecustom.property1}")
+    private String property1;
+
+    @Value("${somecustom.isProdEnv}")
+    private Boolean isProdEnv;
 
 
     public static void main(String[] args) {
@@ -22,6 +24,6 @@ public class CloudConfigDemoClientApplication {
 
     @RequestMapping("/")
     public String home() {
-        return "Hello in Cloud World! ["+propert+"]";
+        return String.format("Hello in Cloud World! [%s] isProdEnv=%s", property1, isProdEnv);
     }
 }
